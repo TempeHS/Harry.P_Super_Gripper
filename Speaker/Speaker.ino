@@ -1,7 +1,10 @@
 
 // Documentation:
 // https://wiki.seeedstudio.com/Grove-Speaker/
-
+/*
+  Author: Harry Pham 25/11/2024
+  Contact: harry.pham969@det.nsw.edu.au
+*/
 //Set up Speaker and set to pin 5
 #define SPEAKER 5
 
