@@ -16,15 +16,28 @@ Servo myServo;
 static unsigned int degreeOfMovement = 180;
 static unsigned int degreeOfOrigin = 90;
 
+Ultrasonic myUltrasonicSensor(7); //set ultrasonic to pin 7
+
+
 void setup()
 {
-  myServo.attach(6);
+  myServo.attach(6); 
   Serial.begin(9600);
+  myServo.write(degreeOfOrigin);
 }
 
 void loop()
 {
-  if(int(detectCentimeters()) < 10){
+  long RangeInCentimeters;
+  RangeInCentimeters = myUltrasonicSensor.MeasureInCentimeters(); // two measurements should keep an interval
+  if( RangeInCentimeters <= 7)
+  {
+    Serial.println("Close up");
+    myServo.write(degreeOfMovement);
+  } else
+  {
     Serial.println("Far away");
+    myServo.write(degreeOfOrigin);
   }
+  delay(50);
 }
