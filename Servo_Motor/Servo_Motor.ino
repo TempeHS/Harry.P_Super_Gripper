@@ -12,7 +12,8 @@
 
 Servo myServo;  // create servo object to control a servo
 
-static unsigned int degreeOfMovement = 180;    // variable to read the value from the analog pin
+static unsigned int degreeOfMovement = 180; 
+static unsigned int degreeOfOrigin = 90;
 
 void setup() {
   myServo.attach(6);  // attaches the servo on pin 9 to the servo object
@@ -20,6 +21,7 @@ void setup() {
 
 void loop() {
   myServo.write(degreeOfMovement);                // sets the servo position according to the set value
-  delay(5000);                                    // waits for the servo to get there
-  myServo.write(0);                               // returns the servo to 0
-  delay
+  delay(500);                                    // waits for the servo to get there
+  myServo.write(degreeOfOrigin);                               // returns the servo to origin
+  delay(500);
+}
