@@ -54,7 +54,7 @@ void loop()
 {
   long RangeInCentimeters;
   RangeInCentimeters = myUltrasonicSensor.MeasureInCentimeters(); // two measurements should keep an interval
-  if( RangeInCentimeters <= 7)
+  if( RangeInCentimeters <= 7.5)
   {
     Serial.println("Close up");
 
